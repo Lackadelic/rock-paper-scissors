@@ -3,22 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Rock, Paper, Scissors :3</title>
 </head>
 <body>
   
 </body>
 
 <script>
-  let computerChoice
-  function getComputerChoice() {
-    let computerChoice = Math.floor(Math.random()  * 10 / 3);       //function to randomly assign and return computer choice
+  function getComputerChoice() {        //function to randomly assign and return computer choice
+    let computerChoice = Math.floor(Math.random()  * 10 / 3);
     if (computerChoice === 0) {
       return "Rock";
     } else if (computerChoice === 1) {
       return "Paper";
-    } else {
+    } else if (computerChoice === 2 || computerChoice === 3) {
       return "Scissors";
+    }
+  }
+
+  function getHumanChoice() {       //function to prompt user for choice
+    let humanChoice = prompt("Time for rock, paper, scissors! Enter your choice:");
+    if (humanChoice === "rock") {
+      return "You've chosen rock!"
+    } else if (humanChoice === "paper") {
+      return "You've chosen paper!";
+    } else if (humanChoice === "scissors") {
+      return "You've chosen scissors! (gay)"
     }
   }
 </script>
