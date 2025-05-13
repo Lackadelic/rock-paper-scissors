@@ -10,6 +10,9 @@
 </body>
 
 <script>
+  let humanScore = 0
+  let computerScore = 0
+
   function getComputerChoice() {        //function to randomly assign and return computer choice
     let computerChoice = Math.floor(Math.random()  * 10 / 3);
     if (computerChoice === 0) {
@@ -23,6 +26,7 @@
 
   function getHumanChoice() {       //function to prompt user for choice
     let humanChoice = prompt("Time for rock, paper, scissors! Enter your choice:");
+    humanChoice = humanChoice.toLowerCase();
     if (humanChoice === "rock") {
       return "You've chosen rock!"
     } else if (humanChoice === "paper") {
