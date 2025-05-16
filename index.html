@@ -17,10 +17,13 @@
     let computerChoice = Math.floor(Math.random()  * 10 / 4);
     if (computerChoice === 0) {
       console.log("Computer chooses rock!");
+      return 0;
     } else if (computerChoice === 1) {
       console.log("Computer chooses paper!");
+      return 1;
     } else if (computerChoice === 2) {
-      console.log("Computer chooses scissors");
+      console.log("Computer chooses scissors!");
+      return 2;
     }
   }
 
@@ -29,10 +32,13 @@
     humanChoice = humanChoice.toLowerCase();
     if (humanChoice === "rock") {
       console.log("You have chosen rock!");
+      return "rock";
     } else if (humanChoice === "paper") {
       console.log("You have chosen paper!");
+      return "paper";
     } else if (humanChoice === "scissors") {
       console.log("You have chosen scissors!");
+      return "scissors";
     }
   }
 
@@ -50,7 +56,7 @@
      } else if (humanChoice === "paper") {
        if (computerChoice === 0) {
          console.log("YIPPEE, paper beats rock!");
-         humanScore = humanScore = 1;
+         humanScore = humanScore + 1;
        } else if (computerChoice === 1) {
          console.log("It's a tie!");
        } else if (computerChoice === 2) {
@@ -60,7 +66,7 @@
      } else if (humanChoice === "scissors") {
        if (computerChoice === 0) {
          console.log("EERR, rock beats scissors.");
-         computerScore = computerScore = 1;
+         computerScore = computerScore + 1;
        } else if (computerChoice === 1) {
          console.log("YIPPEE, scissors beats paper!");
          humanScore = humanScore + 1;
@@ -70,9 +76,21 @@
      }
   }
 
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
+  function playGame() {       //Function to play until one player reaches 3 points
+    while (humanScore != 3 && computerScore != 3) {
+      const humanSelection = getHumanChoice();
+      const computerSelection = getComputerChoice();
 
-  playRound(humanSelection, computerSelection);
+      playRound(humanSelection, computerSelection);
+    }
+
+    if (humanScore === 3) {
+      console.log("YIPPEE!!! You're the big winner! :3");
+    } else {
+      console.log("Wompwomp, you just lost to a computer. Feel bad.");
+    }
+  }
+
+  playGame();
 </script>
 </html>
