@@ -37,34 +37,34 @@
   }
 
   function playRound(humanChoice, computerChoice) {       //function to play round of game
-    if (humanSelection === "rock") {
-      if (computerSelection === 0) {
+    if (humanChoice === "rock") {
+      if (computerChoice === 0) {
          console.log("It's a tie!");
-       } else if (computerSelection === 1) {
+       } else if (computerChoice === 1) {
          console.log("EERR, paper beats rock.");
          computerScore = computerScore + 1;
-       } else if (computerSelection === 2) {
+       } else if (computerChoice === 2) {
          console.log("YIPPEE, rock beats scissors!");
          humanScore = humanScore + 1;
        }
-     } else if (humanSelection === "paper") {
-       if (computerSelection === 0) {
+     } else if (humanChoice === "paper") {
+       if (computerChoice === 0) {
          console.log("YIPPEE, paper beats rock!");
          humanScore = humanScore = 1;
-       } else if (computerSelection === 1) {
+       } else if (computerChoice === 1) {
          console.log("It's a tie!");
-       } else if (computerSelection === 2) {
+       } else if (computerChoice === 2) {
          console.log("EERR, scissors beats paper.");
          computerScore = computerScore + 1;
        }
-     } else if (humanSelection === "scissors") {
-       if (computerSelection === 0) {
+     } else if (humanChoice === "scissors") {
+       if (computerChoice === 0) {
          console.log("EERR, rock beats scissors.");
          computerScore = computerScore = 1;
-       } else if (computerSelection === 1) {
+       } else if (computerChoice === 1) {
          console.log("YIPPEE, scissors beats paper!");
          humanScore = humanScore + 1;
-       } else if (computerSelection === 2) {
+       } else if (computerChoice === 2) {
          console.log("It's a tie!");
        }
      }
